@@ -1,0 +1,42 @@
+<view class="map-page">
+  <map
+    id="photoMap"
+    class="photo-map"
+    latitude="{{latitude}}"
+    longitude="{{longitude}}"
+    scale="12"
+    show-location
+    markers="{{markers}}"
+    bindmarkertap="handleMarkerTap"
+  />
+
+  <view wx:if="{{loading}}" class="loading">正在加载照片...</view>
+
+  <view wx:if="{{!loading && !markers.length}}" class="empty empty-overlay">
+    暂无带拍摄位置的照片
+  </view>
+
+  <view wx:if="{{selectedPhoto}}" class="photo-card">
+    <button class="close-button" bindtap="closePhotoCard">×</button>
+    <image
+      class="photo-preview"
+      src="{{selectedPhoto.displayUrl}}"
+      mode="aspectFill"
+      bindtap="previewSelectedPhoto"
+    />
+    <view class="photo-body">
+      <view class="photo-desc">{{selectedPhoto.description || '暂无描述'}}</view>
+      <view class="photo-meta">分类：{{selectedPhoto.category || '未分类'}}</view>
+      <view class="uploader" bindtap="openPhotographer">
+        <image
+          wx:if="{{selectedPhoto.uploaderAvatar}}"
+          class="uploader-avatar"
+          src="{{selectedPhoto.uploaderAvatar}}"
+        />
+        <view class="uploader-name">
+          {{selectedPhoto.uploaderName || '匿名拍摄者'}}
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

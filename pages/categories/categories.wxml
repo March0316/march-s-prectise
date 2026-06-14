@@ -1,0 +1,46 @@
+<view class="page categories-page">
+  <view class="section-title">照片分类</view>
+
+  <view wx:if="{{loading}}" class="empty">正在加载分类...</view>
+
+  <view wx:elif="{{!categories.length}}" class="empty">
+    暂无照片分类
+  </view>
+
+  <view wx:else class="content">
+    <scroll-view class="category-tabs" scroll-x enable-flex>
+      <view
+        wx:for="{{categories}}"
+        wx:key="name"
+        class="category-tab {{activeCategory === item.name ? 'active' : ''}}"
+        data-category="{{item.name}}"
+        bindtap="switchCategory"
+      >
+        <text>{{item.name}}</text>
+        <text class="category-count">{{item.count}}</text>
+      </view>
+    </scroll-view>
+
+    <view class="photo-grid">
+      <view wx:for="{{activePhotos}}" wx:key="_id" class="photo-card">
+        <image
+          class="photo-image"
+          src="{{item.displayUrl}}"
+          mode="aspectFill"
+          data-url="{{item.displayUrl}}"
+          bindtap="previewPhoto"
+        />
+        <view class="photo-info">
+          <view class="photo-desc">{{item.description || '暂无描述'}}</view>
+          <view
+            class="photographer-link"
+            data-openid="{{item.uploaderOpenId}}"
+            bindtap="openPhotographer"
+          >
+            {{item.uploaderName || '匿名拍摄者'}}
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

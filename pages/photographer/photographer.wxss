@@ -1,0 +1,97 @@
+.photographer-page {
+  padding-bottom: 40rpx;
+}
+
+.profile-card {
+  display: flex;
+  align-items: center;
+  padding: 28rpx;
+  border-radius: 28rpx;
+  background: linear-gradient(135deg, #1f7aeb, #52a7ff);
+  color: #ffffff;
+  box-shadow: 0 12rpx 32rpx rgba(31, 122, 235, 0.22);
+}
+
+.profile-avatar {
+  width: 112rpx;
+  height: 112rpx;
+  margin-right: 24rpx;
+  border: 4rpx solid rgba(255, 255, 255, 0.76);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.24);
+}
+
+.profile-name {
+  font-size: 36rpx;
+  font-weight: 700;
+}
+
+.profile-count {
+  margin-top: 10rpx;
+  opacity: 0.88;
+  font-size: 26rpx;
+}
+
+.photographer-tabs {
+  margin-top: 28rpx;
+  white-space: nowrap;
+}
+
+.photographer-tab {
+  display: inline-block;
+  margin-right: 18rpx;
+  padding: 14rpx 24rpx;
+  border-radius: 999rpx;
+  background: #ffffff;
+  color: #4e5969;
+  font-size: 26rpx;
+  box-shadow: 0 6rpx 18rpx rgba(31, 35, 41, 0.06);
+}
+
+.photographer-tab.active {
+  background: #1f2329;
+  color: #ffffff;
+}
+
+.photo-list {
+  margin-top: 28rpx;
+}
+
+.photo-item {
+  display: flex;
+  overflow: hidden;
+  margin-bottom: 22rpx;
+  border-radius: 24rpx;
+  background: #ffffff;
+  box-shadow: 0 8rpx 24rpx rgba(31, 35, 41, 0.08);
+}
+
+.photo-image {
+  flex: 0 0 220rpx;
+  width: 220rpx;
+  height: 180rpx;
+  background: #edf0f5;
+}
+
+.photo-content {
+  flex: 1;
+  min-width: 0;
+  padding: 22rpx;
+}
+
+.photo-desc {
+  display: -webkit-box;
+  overflow: hidden;
+  color: #1f2329;
+  font-size: 28rpx;
+  font-weight: 600;
+  line-height: 1.45;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.photo-meta {
+  margin-top: 18rpx;
+  color: #6b7280;
+  font-size: 24rpx;
+}

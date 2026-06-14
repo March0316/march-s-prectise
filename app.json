@@ -1,0 +1,40 @@
+{
+  "pages": [
+    "pages/map/map",
+    "pages/categories/categories",
+    "pages/photographer/photographer"
+  ],
+  "window": {
+    "navigationBarTitleText": "MapAlbum",
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#f7f8fa"
+  },
+  "tabBar": {
+    "color": "#7a7f87",
+    "selectedColor": "#1f7aeb",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/map/map",
+        "text": "地图"
+      },
+      {
+        "pagePath": "pages/categories/categories",
+        "text": "分类"
+      }
+    ]
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "用于在地图上展示照片拍摄位置"
+    }
+  },
+  "requiredPrivateInfos": [
+    "getLocation",
+    "chooseLocation"
+  ],
+  "lazyCodeLoading": "requiredComponents",
+  "sitemapLocation": "sitemap.json"
+}

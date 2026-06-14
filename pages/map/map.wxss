@@ -1,0 +1,107 @@
+.map-page {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.photo-map {
+  width: 100%;
+  height: 100%;
+}
+
+.loading,
+.empty-overlay {
+  position: absolute;
+  top: 32rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  padding: 16rpx 28rpx;
+  border-radius: 999rpx;
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 8rpx 24rpx rgba(31, 35, 41, 0.12);
+}
+
+.loading {
+  color: #4e5969;
+  font-size: 26rpx;
+}
+
+.empty-overlay {
+  width: max-content;
+  margin-top: 0;
+}
+
+.photo-card {
+  position: absolute;
+  right: 24rpx;
+  bottom: 40rpx;
+  left: 24rpx;
+  z-index: 3;
+  overflow: hidden;
+  border-radius: 28rpx;
+  background: #ffffff;
+  box-shadow: 0 18rpx 48rpx rgba(31, 35, 41, 0.18);
+}
+
+.close-button {
+  position: absolute;
+  top: 12rpx;
+  right: 12rpx;
+  z-index: 4;
+  width: 56rpx;
+  height: 56rpx;
+  padding: 0;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.46);
+  color: #ffffff;
+  font-size: 34rpx;
+  line-height: 56rpx;
+}
+
+.close-button::after {
+  border: 0;
+}
+
+.photo-preview {
+  display: block;
+  width: 100%;
+  height: 360rpx;
+  background: #edf0f5;
+}
+
+.photo-body {
+  padding: 24rpx;
+}
+
+.photo-desc {
+  font-size: 32rpx;
+  font-weight: 600;
+  line-height: 1.45;
+}
+
+.photo-meta {
+  margin-top: 12rpx;
+  color: #6b7280;
+  font-size: 26rpx;
+}
+
+.uploader {
+  display: flex;
+  align-items: center;
+  margin-top: 22rpx;
+}
+
+.uploader-avatar {
+  width: 56rpx;
+  height: 56rpx;
+  margin-right: 16rpx;
+  border-radius: 50%;
+}
+
+.uploader-name {
+  color: #1f7aeb;
+  font-size: 28rpx;
+  font-weight: 600;
+}

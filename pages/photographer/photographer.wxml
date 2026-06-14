@@ -1,0 +1,56 @@
+<view class="page photographer-page">
+  <view class="section-title">拍摄者主页</view>
+
+  <view wx:if="{{loading}}" class="empty">正在加载拍摄者照片...</view>
+
+  <view wx:elif="{{!photographers.length}}" class="empty">
+    暂无拍摄者照片
+  </view>
+
+  <view wx:else class="content">
+    <view class="profile-card">
+      <image
+        class="profile-avatar"
+        src="{{currentPhotographer.avatar || ''}}"
+        mode="aspectFill"
+      />
+      <view class="profile-info">
+        <view class="profile-name">{{currentPhotographer.name}}</view>
+        <view class="profile-count">{{currentPhotographer.count}} 张照片</view>
+      </view>
+    </view>
+
+    <scroll-view wx:if="{{photographers.length > 1}}" class="photographer-tabs" scroll-x>
+      <view
+        wx:for="{{photographers}}"
+        wx:key="uploaderOpenId"
+        class="photographer-tab {{activeUploaderOpenId === item.uploaderOpenId ? 'active' : ''}}"
+        data-openid="{{item.uploaderOpenId}}"
+        bindtap="switchPhotographer"
+      >
+        {{item.name}}
+      </view>
+    </scroll-view>
+
+    <view class="photo-list">
+      <view wx:for="{{photos}}" wx:key="_id" class="photo-item">
+        <image
+          class="photo-image"
+          src="{{item.displayUrl}}"
+          mode="aspectFill"
+          data-url="{{item.displayUrl}}"
+          bindtap="previewPhoto"
+        />
+        <view class="photo-content">
+          <view class="photo-desc">{{item.description || '暂无描述'}}</view>
+          <view class="photo-meta">
+            <text>{{item.category || '未分类'}}</text>
+            <text wx:if="{{item.location && item.location.name}}">
+              · {{item.location.name}}
+            </text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
