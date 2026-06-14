@@ -10,10 +10,12 @@
   <view wx:else class="content">
     <view class="profile-card">
       <image
+        wx:if="{{currentPhotographer.avatar}}"
         class="profile-avatar"
-        src="{{currentPhotographer.avatar || ''}}"
+        src="{{currentPhotographer.avatar}}"
         mode="aspectFill"
       />
+      <view wx:else class="profile-avatar avatar-placeholder">M</view>
       <view class="profile-info">
         <view class="profile-name">{{currentPhotographer.name}}</view>
         <view class="profile-count">{{currentPhotographer.count}} 张照片</view>
@@ -24,7 +26,7 @@
       <view
         wx:for="{{photographers}}"
         wx:key="uploaderOpenId"
-        class="photographer-tab {{activeUploaderOpenId === item.uploaderOpenId ? 'active' : ''}}"
+        class="photographer-tab {{activeUploaderOpenId == item.uploaderOpenId ? 'active' : ''}}"
         data-openid="{{item.uploaderOpenId}}"
         bindtap="switchPhotographer"
       >

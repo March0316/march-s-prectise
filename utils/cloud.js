@@ -46,7 +46,18 @@ const attachPhotoDisplayUrls = async (photos) => {
     return photos;
   }
 
-  const { fileList } = await wx.cloud.getTempFileURL({ fileList: fileIDs });
+  const batches = [];
+  for (let index = 0; index < fileIDs.length; index += 50) {
+    batches.push(fileIDs.slice(index, index + 50));
+  }
+
+  const tempFileResults = await Promise.all(
+    batches.map((fileList) => wx.cloud.getTempFileURL({ fileList }))
+  );
+  const fileList = tempFileResults.reduce(
+    (result, item) => result.concat(item.fileList),
+    []
+  );
   const urlMap = fileList.reduce((map, file) => {
     map[file.fileID] = file.tempFileURL;
     return map;

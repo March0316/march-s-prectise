@@ -29,8 +29,8 @@
 }
 
 .empty-overlay {
-  width: max-content;
   margin-top: 0;
+  white-space: nowrap;
 }
 
 .photo-card {

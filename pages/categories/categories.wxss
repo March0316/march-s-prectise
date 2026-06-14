@@ -37,14 +37,17 @@
 }
 
 .photo-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20rpx;
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -10rpx;
+  margin-left: -10rpx;
   margin-top: 28rpx;
 }
 
 .photo-card {
+  width: calc(50% - 20rpx);
   overflow: hidden;
+  margin: 0 10rpx 20rpx;
   border-radius: 24rpx;
   background: #ffffff;
   box-shadow: 0 8rpx 24rpx rgba(31, 35, 41, 0.08);

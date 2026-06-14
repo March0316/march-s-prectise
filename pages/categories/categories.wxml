@@ -12,7 +12,7 @@
       <view
         wx:for="{{categories}}"
         wx:key="name"
-        class="category-tab {{activeCategory === item.name ? 'active' : ''}}"
+        class="category-tab {{activeCategory == item.name ? 'active' : ''}}"
         data-category="{{item.name}}"
         bindtap="switchCategory"
       >
