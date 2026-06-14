@@ -1,0 +1,9 @@
+{
+  "desc": "MapAlbum sitemap",
+  "rules": [
+    {
+      "action": "allow",
+      "page": "*"
+    }
+  ]
+}
